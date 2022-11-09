@@ -20,8 +20,21 @@ def read_info():
         full_file = csv.reader(f, delimiter=';')
         res = list(full_file)
         return res
+
+def delete_info(index):
+    lst = read_info()
+    del lst[index]
+    with open('phonebook.csv', 'w', encoding='utf-8', newline='') as f:
+        writer = csv.writer(f, delimiter=';')
+        for row in lst:
+            writer.writerow(row)
+
+# def read(update, context):
+#     context.bot.send_message(update.effective_chat.id, read_info())
+
 def read(update, context):
-    context.bot.send_message(update.effective_chat.id, read_info())
+ for rec in read_info():
+  context.bot.send_message(update.effective_chat.id, text=' '.join(rec))
 
 def add(update, context):
     context.bot.send_message(update.effective_chat.id, )
