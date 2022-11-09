@@ -16,7 +16,7 @@ logging.basicConfig(
 
 logger = logging.getLogger(__name__)
 
-TOKEN = '5768115419:AAGg1Ih_1bh4wSL53Utg6TNJklFm9fR8-cE'
+TOKEN = ''
 
 candy = 0
 def start(update, context):
